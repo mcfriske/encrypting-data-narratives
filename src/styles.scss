@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.full-width {width:100%;}
+.pointer{cursor:pointer;}
+span.yellow{background-color: yellow;}
+span.lime{background-color:lime;}
+span.lightgreen{background-color:lightgreen;}
+span.magenta{background-color:magenta;color:white;}
+span.cadetblue{background-color:cadetblue;}
+span.crimson{background-color:crimson;color:white;}

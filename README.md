@@ -1,4 +1,4 @@
-# SecretViz
+# Data Processor - a Tool to Aide Crafted Visualizations
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 

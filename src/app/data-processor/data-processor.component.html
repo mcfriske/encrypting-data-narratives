@@ -1,0 +1,53 @@
+<mat-accordion>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Data
+      </mat-panel-title>
+      <mat-panel-description>
+        Update csv data
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>CSV</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="full-width">
+            <textarea #csvInput matInput (change)="onCSVInput(csvInput.value)" name="csv" placeholder="Enter CSV Data" [(ngModel)]="csvText"></textarea>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Configure
+      </mat-panel-title>
+      <mat-panel-description>
+        Update groups and highlights
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-groups [groups]="groups" 
+    (onChange)="updateGroups($event)" 
+    (onCreate)="createGroup($event)"></app-groups>
+    <app-highlighter [highlights]="highlights" 
+    (onChange)="updateHighlights($event)" 
+    (onCreate)="createHighlight($event)"></app-highlighter>
+  </mat-expansion-panel>
+</mat-accordion>
+<ng-container *ngIf="dataSource">
+  <mat-tab-group>
+    <mat-tab label="All Data">
+      <app-table [data]="data" [displayedColumns]="displayedColumns" [highlights]="highlights"></app-table>
+    </mat-tab>
+    <mat-tab *ngFor="let group of groups" [label]="group.name">
+      <app-table [data]="data" [grouping]="group" [displayedColumns]="displayedColumns" [highlights]="highlights"></app-table>
+    </mat-tab>
+  </mat-tab-group>
+  
+</ng-container>
