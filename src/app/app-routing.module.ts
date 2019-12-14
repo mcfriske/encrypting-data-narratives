@@ -5,7 +5,7 @@ import { DataProcessorComponent } from './data-processor/data-processor.componen
 
 const routes: Routes = [
   {
-    path: 'data-processor',
+    path: '',
     component: DataProcessorComponent,
     children: []
   }
